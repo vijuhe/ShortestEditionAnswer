@@ -34,7 +34,7 @@ namespace ShortestEdition
         private Row CreateRow(List<string> lengthOrderedWords)
         {
             var row = new Row();
-            while(!row.IsFullOrUnfillable && lengthOrderedWords.Any())
+            while (!row.IsFullOrUnfillable && lengthOrderedWords.Any())
             {
                 int shortestWordLength = lengthOrderedWords.Last().Length;
                 string word = lengthOrderedWords.FirstOrDefault(w => 

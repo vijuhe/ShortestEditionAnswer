@@ -11,6 +11,7 @@ namespace ShortestEdition
             {
                 Console.WriteLine("Arguments: input file, output file");
                 Console.ReadLine();
+                return;
             }
             var started = DateTime.Now;
             string bookFile = args[0];

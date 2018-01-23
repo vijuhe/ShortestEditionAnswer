@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
-using System.Text.RegularExpressions;
 
 namespace ShortestEdition
 {
@@ -26,8 +26,7 @@ namespace ShortestEdition
 
         private IEnumerable<string> SplitTextWordsAndOrderByDescendingLength()
         {
-            return Regex.Split(text, @"(\s|\r?\n)+")
-                .Where(word => !string.IsNullOrWhiteSpace(word))
+            return text.Split(new string[] { Environment.NewLine, " " }, StringSplitOptions.RemoveEmptyEntries)
                 .OrderByDescending(word => word.Length);
         }
 
